@@ -2,11 +2,10 @@
 // $images = ['.', '..', 'img01.jpg', 'img02.jpg', 'img03.jpg', 'img04.jpg', 'img05.jpg'];
 //scandir('images');
     // Получаем список изображений из папки
-    $images = scandir('images');
+$images = array_filter(scandir('images'), function($file) {
     // Фильтруем только изображения
-    $images = array_filter($images, function($file) {
-        return preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
-    });
+    return preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
+});
 ?> 
 <!-- а здесь шаблон страницы -->
 <!DOCTYPE html>
