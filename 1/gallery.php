@@ -7,7 +7,6 @@ $images = array_filter(scandir('images'), function($file) {
     return preg_match('/\.(jpg|jpeg|png|gif)$/i', $file);
 });
 ?> 
-<!-- а здесь шаблон страницы -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
